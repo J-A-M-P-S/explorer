@@ -8,7 +8,7 @@ block content
       ];
       var pieWealthDist = $.jqplot('pieChart', [data],
         {
-          seriesColors: [ "#d9534f", "#5cb85c", "#428bca", "#222", "#CCC"],
+          seriesColors: [ "#d9534f", "#5cb85c", "#428bca", "#f89406", "#7A8288"],
           series: [{
             // Make this a pie chart.
             renderer: $.jqplot.PieRenderer,
@@ -84,9 +84,16 @@ block content
                 td.text-center #{parseFloat(distc.percent).toFixed(2)}
               tr
                 th
-                  div.pull-left(style='background-color:#222;width:20px;height:20px;margin-right:6px;')
+                  div.pull-left(style='background-color:#f89406;width:20px;height:20px;margin-right:6px;')
                   span #{settings.locale.rl_top100}
                 - var total = parseFloat(distd.total).toLocaleString('en',{'minimumFractionDigits':2,'maximumFractionDigits':8,'useGrouping':true})
+                td #{total}
+                td.text-center #{parseFloat(distd.percent).toFixed(2)}
+              tr
+                th
+                  div.pull-left(style='background-color:#7A8288;width:20px;height:20px;margin-right:6px;')
+                  span #{settings.locale.rl_hundredplus}
+                - var total = parseFloat(diste.total).toLocaleString('en',{'minimumFractionDigits':2,'maximumFractionDigits':8,'useGrouping':true})
                 td #{total}
                 td.text-center #{parseFloat(distd.percent).toFixed(2)}
               tr

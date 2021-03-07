@@ -1,18 +1,18 @@
 doctype html
 html
   head
-    title= settings.title
+    title=settings.title
     link(rel='stylesheet', href='/themes/' + settings.theme + '/bootstrap.css')
     link(rel='stylesheet', href='/vendor/jqplot/jquery.jqplot.css')
     link(rel='stylesheet', href='/vendor/flags-css/css/flag-icon.min.css')
-    link(res='stylesheet', href='//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.css')
-    link(rel='stylesheet', href='//cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css')
+    link(res='stylesheet', href='/css/twitter.bootstrap.css')
+    link(rel='stylesheet', href='/css/dataTables.bootstrap4.min.css')
     link(rel='stylesheet', href='//use.fontawesome.com/releases/v5.14.0/css/all.css')
     link(rel='stylesheet', href='//use.fontawesome.com/releases/v5.14.0/css/v4-shims.css')
     link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Play:700,400')
     link(rel='stylesheet', href='/stylesheets/style.css')
-    script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js')
-    script(src='//stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js')
+    script(src='/javascripts/jquery.min.js')
+    script(src='/javascripts/bootstrap.bundle.min.js')
     script(src='/vendor/jqplot/jquery.jqplot.min.js')
     script(src='/vendor/jqplot/plugins/jqplot.dateAxisRenderer.min.js')
     script(src='/vendor/jqplot/plugins/jqplot.ohlcRenderer.min.js')
@@ -20,10 +20,10 @@ html
     script(src='/vendor/jqplot/plugins/jqplot.pieRenderer.min.js')
     script(src='/vendor/jqplot/plugins/jqplot.barRenderer.min.js')
     script(src='/vendor/jqplot/plugins/jqplot.categoryAxisRenderer.min.js')
-    script(src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js')
-    script(src='//cdn.datatables.net/1.10.9/js/jquery.dataTables.min.js')
-    script(src='//cdn.datatables.net/responsive/1.0.1/js/dataTables.responsive.js')
-    script(src='//cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js')
+    script(src='/javascripts/moment.min.js')
+    script(src='/javascripts/jquery.dataTables.min.js')
+    script(src='/javascripts/dataTables.responsive.js')
+    script(src='/javascripts/dataTables.bootstrap4.min.js')
     script(src='/javascripts/chart.js')
     script.
       $(document).ready(function(){
@@ -125,7 +125,7 @@ html
           span.navbar-toggler-icon 
         a.navbar-brand(href='/')
           if typeof settings.headerlogo !== "undefined" && settings.headerlogo && settings.headerlogo.length > 1
-            img(src=settings.headerlogo, style='width:153px;height:45px;')
+            img(src=settings.headerlogo, style='width:125px;height:36px;')
           else
             =settings.title
       .collapse.navbar-collapse(id='navbar-collapse')
@@ -246,8 +246,8 @@ html
         ul.nav.justify-content-center
           li.text-center(style='margin-left:80px;margin-right:80px;')
             p(style='')
-              a.nav-link.poweredby(href='https://github.com/iquidus/explorer', target='_blank') Powered by Iquidus Explorer v#{settings.iquidus_version}
+              a.nav-link.poweredby(href='https://github.com/AlphaX-Projects/explorer', target='_blank') Powered by Iquidus Explorer v#{settings.iquidus_version} AlphaX Edition
       .col-md-4.navbar-nav
         ui.nav.justify-content-end
-          label#lblBlockcount.badge.badge-pill.nav-link
-          label#lblConnections.badge.badge-pill.nav-link
+          strong.label#lblBlockcount.badge.badge-pill.nav-link
+          strong.label#lblConnections.badge.badge-pill.nav-link
