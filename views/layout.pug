@@ -167,8 +167,8 @@ html
     .col-md-12
       .row.text-center.d-flex.justify-content-center
         .col-md-2
-          .card.card-default.d-none.d-md-block.d-block
-            .card-header
+          .card.card-default.d-none.d-md-block.d-block.card-defaultblocks
+            .card-header.card-headerblocks
               span.header-icons.fas.fa-cogs(style="margin-right:6px;")
               if settings.nethash_units == 'K'
                 strong.span #{settings.locale.network} (KH/s)
@@ -182,8 +182,9 @@ html
                 strong.span #{settings.locale.network} (PH/s)
               else if settings.nethash_units == 'H'
                 strong.span #{settings.locale.network} (H/s)
-            .card-body
+            .card-body.card-bodyblocks
               #hashratecard
+                span.text-success
                   if settings.index.difficulty == 'Hybrid'
                     strong.label#hashrate -
                     <br>
@@ -195,18 +196,21 @@ html
             img(src=settings.logo, style='margin-top:-15px;height:128px;')
 
         .col-md-2
-          .card.card-default.d-none.d-md-block.d-block
-            .card-header
+          .card.card-default.d-none.d-md-block.d-block.card-defaultblocks
+            .card-header.card-headerblocks
               span.header-icons.fas.fa-sliders-h(style="margin-right:6px;")
-              strong #{settings.locale.difficulty}
-            .card-body
+              strong.span #{settings.locale.difficulty}
+            .card-body.card-bodyblocks
               #difficultycard
-                if settings.index.difficulty == 'Hybrid'
-                  strong.label#difficulty -
-                  <br>
-                  strong.label#difficultyHybrid -
-                else
-                  strong.label#difficulty -
+                span.text-success
+                  if settings.index.difficulty == 'Hybrid'
+                    span(style="color:#FFF; font-size:75%; font-weight:normal;") POW: 
+                    strong.label#difficulty -
+                    <br>
+                    span(style="color:#FFF; font-size:75%; font-weight:normal;") POS: 
+                    strong.label#difficultyHybrid -
+                  else
+                    strong.label#difficulty -
 
       .row.text-center(style='margin-top:10px;margin-bottom:20px;')
         form.form-inline.col-12.d-flex.justify-content-center(method='post', action='/search')
