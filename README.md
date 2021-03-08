@@ -6,8 +6,11 @@ An open source block explorer written in node.js.
 ### License
 
 Copyright (c) 2015, Iquidus Technology
+
 Copyright (c) 2015, Luke Williams
-Copyright (c) 2021, AlphaX Projects 
+
+Copyright (c) 2021, AlphaX Projects
+
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
